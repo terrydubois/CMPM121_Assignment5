@@ -53,7 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ScrCameraFollow.cs" />
+     <Compile Include="Assets\Scripts\ScrCamera.cs" />
      <Compile Include="Assets\Scripts\ScrMovement.cs" />
      <Compile Include="Assets\Suriyun\Cute Zoo\Scripts\AnimatorController.cs" />
      <Compile Include="Assets\Suriyun\Cute Zoo\Scripts\Camera Scripts\MouseOrbitImproved.cs" />
