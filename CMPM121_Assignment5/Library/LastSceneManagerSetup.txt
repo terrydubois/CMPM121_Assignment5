@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Suriyun/Cute Zoo/Zoo_Showcase1.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
