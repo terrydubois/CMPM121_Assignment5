@@ -6,6 +6,7 @@ namespace Suriyun {
     public class ScrMovement : MonoBehaviour
     {
         public float moveSpeed;
+        public float jumpSpeed;
         private float rot = 0;
         public float rotSpeed = 80;
         public float gravity = 8;
@@ -14,25 +15,44 @@ namespace Suriyun {
 
         CharacterController controller;
         Animator animator;
+        private Rigidbody rb;
 
         void Start()
         {
             controller = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody>();
         }
 
         void Update()
         {
-            if (controller.isGrounded) {
-                if (Input.GetKey(KeyCode.W)) {
-                    moveDir = new Vector3(0, 0, 1);
-                    moveDir *= moveSpeed;
-                    moveDir = transform.TransformDirection(moveDir);
+        
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
+                animator.SetInteger("animation", 1);
+                moveDir = new Vector3(0, 0, 1);
+                moveDir *= moveSpeed;
+                
+                if (Input.GetKey(KeyCode.Space)) {
+                    moveDir *= 2;
+                    animator.SetInteger("animation", 2);
                 }
-                if (Input.GetKeyUp(KeyCode.W)) {
-                    moveDir = Vector3.zero;
+
+                moveDir = transform.TransformDirection(moveDir);
+            }
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) {
+                animator.SetInteger("animation", 0);
+                moveDir = Vector3.zero;
+            }
+            
+            if (controller.isGrounded) {
+                if (Input.GetKey(KeyCode.Z)) {
+                    var jumpForce = new Vector3(0, 1, 0);
+                    jumpForce *= jumpSpeed;
+                    jumpForce = transform.TransformDirection(jumpForce);
+                    controller.Move(jumpForce * Time.deltaTime);
                 }
             }
+            
 
             rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
             transform.eulerAngles = new Vector3(0, rot, 0);

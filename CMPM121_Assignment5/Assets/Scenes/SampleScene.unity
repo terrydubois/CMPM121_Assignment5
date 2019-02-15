@@ -257,13 +257,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: 0.97834677, z: -0.20697263, w: 0}
+  m_LocalRotation: {x: 0.20697263, y: 0, z: 0, w: 0.97834677}
   m_LocalPosition: {x: 0, y: 0.8, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 23.89, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.89, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21277d67d3c45c54fb48be0977256ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 1
+  jumpSpeed: 2
   rotSpeed: 80
   gravity: 8
 --- !u!143 &1797571266
@@ -472,3 +473,16 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &1797571268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797571263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a9d801e4b93da498fd7411eb7a15fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraDistance: 1
