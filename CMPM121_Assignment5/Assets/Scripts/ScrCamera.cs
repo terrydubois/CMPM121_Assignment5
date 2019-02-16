@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Suriyun {
     public class ScrCamera : MonoBehaviour
     {
-        static int characterAmount = 2;
+        static int characterAmount = 3;
         public GameObject[] characters = new GameObject[characterAmount];
         private int currentCharacter = 0;
 

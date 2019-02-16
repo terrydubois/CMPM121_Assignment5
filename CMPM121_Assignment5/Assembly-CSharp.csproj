@@ -59,9 +59,11 @@
      <Compile Include="Assets\Suriyun\Cute Zoo\Scripts\Camera Scripts\MouseOrbitImproved.cs" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\Fruit Pack\Shaders\ToonLitTransparent.shader" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\CharaMain.cginc" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\CharaSkin.cginc" />
+     <None Include="Assets\Fruit Pack\Shaders\ToonLit.shader" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Suriyun\Cute Zoo\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
