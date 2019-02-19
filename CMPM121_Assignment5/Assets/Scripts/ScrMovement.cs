@@ -29,15 +29,15 @@ namespace Suriyun {
         void Update()
         {
 
-            if (selected && controller.isGrounded) {
+            if (selected && controller.isGrounded && !Input.GetKey(KeyCode.E)) {
                 // walk forward
-                if (Input.GetKey(KeyCode.UpArrow)) {
+                if (Input.GetKey(KeyCode.W)) {
                     animator.SetInteger("animation", 1);
                     moveDir = new Vector3(0, 0, 1);
                     moveDir *= moveSpeed;
                     
                     // run if player is holding X
-                    if (Input.GetKey(KeyCode.X)) {
+                    if (Input.GetKey(KeyCode.LeftShift)) {
                         moveDir *= 2;
                         animator.SetInteger("animation", 2);
                     }
@@ -46,17 +46,17 @@ namespace Suriyun {
                 }
                 
                 // walk backwards
-                if (Input.GetKey(KeyCode.DownArrow)) {
+                if (Input.GetKey(KeyCode.S)) {
                     animator.SetInteger("animation", 1);
-                    moveDir = new Vector3(0, 0, -1);
+                    moveDir = new Vector3(0, 0, -0.5f);
                     moveDir *= moveSpeed;
                     moveDir = transform.TransformDirection(moveDir);
                 }
 
                 // rotate if pressing left/right
-                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) {
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
                     float runMultiply = 1;
-                    if (Input.GetKey(KeyCode.X)) {
+                    if (Input.GetKey(KeyCode.LeftShift)) {
                         runMultiply = 1.5f;
                     }
                     else {
@@ -66,11 +66,16 @@ namespace Suriyun {
                     transform.eulerAngles = new Vector3(0, rot, 0);
                 }
             }
+            
+            if (Input.GetKey(KeyCode.E)) {
+                moveDir = Vector3.zero;
+                animator.SetInteger("animation", 4);
+            }
 
             // return to standstill
-            if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow)
-            || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)
-            || !selected) {
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)
+            || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)
+            || Input.GetKeyUp(KeyCode.E) || !selected) {
                 animator.SetInteger("animation", 0);
                 moveDir = Vector3.zero;
             }
