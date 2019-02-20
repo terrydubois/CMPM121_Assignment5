@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ScrAnimController.cs" />
      <Compile Include="Assets\Scripts\ScrCamera.cs" />
+     <Compile Include="Assets\Scripts\ScrChangeScene.cs" />
      <Compile Include="Assets\Scripts\ScrDestroyOnCol.cs" />
      <Compile Include="Assets\Scripts\ScrMovement.cs" />
      <Compile Include="Assets\Suriyun\Cute Zoo\Scripts\AnimatorController.cs" />
